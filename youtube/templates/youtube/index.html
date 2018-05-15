@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'youtube/style.css' %}"> 
+<title>Eat Butter</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="containerheader"><a class="containerLink" href="{{cur_site.site_url}}" target="_blank">
+        <div class="siteIcon">
+            <img class="site_icon" src="{% static 'youtube/' %}{{cur_site.icon}}">
+        </div>
+        <div class="siteName">{{cur_site.site_name}}</div>
+    </a></div>
+    <div class="containerbody">
+    {% if cur_site %} 
+        <ul>
+            <li class="item_list"><a href="{{cur_site.site_url}}" target="_blank">Seems to be working</a></li>
+        </ul>
+    {% else %}
+        <p class="none_message">No channels have been added</p>
+    {% endif %}
+    </div>
+    <div class="containerfooter">
+        
+    </div>
+</div>
+</body>
