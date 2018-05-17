@@ -15,16 +15,38 @@
         <div class="siteName">{{cur_site.site_name}}</div>
     </a></div>
     <div class="containerbody">
-    {% if cur_site %} 
+    {% if cur_channels %} 
         <ul>
-            <li class="item_list"><a href="{{cur_site.site_url}}" target="_blank">Seems to be working</a></li>
+        {% for channel in cur_channels %}
+            <li class="item_list"><a href="{{channel.channel_url}}" target="_blank">Seems to be working</a></li>
+        {% endfor %}
         </ul>
     {% else %}
         <p class="none_message">No channels have been added</p>
     {% endif %}
+    <div class="addChannel">
+        <p>&#8853 Add Channel</p>
+        <form action="{% url 'mainApp:pickchannels' %}" method="POST"><div class="addChannelDetails">
+            {% csrf_token %}
+            <div class="channelSearch">
+                <label for="chaninput">Channel Name:</label>
+                <input class="chaninput" type="text" name="input">
+            </div>
+            <div class="dataQty">
+                <label for="dataQty">Number of videos:</label>
+                <input class="qtyinputs" type="radio" name="chqty" value="1">1
+                <input class="qtyinputs" type="radio" name="chqty" value="3">3
+                <input class="qtyinputs" type="radio" name="chqty" value="5">5
+            </div>
+            <div class="submitbox">
+                <input type="submit" value="find">
+            </div>
+        </div></form>
     </div>
+    </div>
+    
     <div class="containerfooter">
-        
+        <p>{{channel0}}</p>
     </div>
 </div>
 </body>
