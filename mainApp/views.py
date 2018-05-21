@@ -1,4 +1,5 @@
 import requests
+import os
 from django.shortcuts import render
 from .models import Site, Channel
 from apiclient.discovery import build
@@ -11,7 +12,7 @@ def index(request):
 def pick_channels(request):
     user_input = request.POST['input']
     channels = {}
-    DEVELOPER_KEY = "AIzaSyBCGHaWYhxwtDW2hHPbjh52Rm8I1-eGJ_k"
+    DEVELOPER_KEY = os.getenv("YOUTUBE_API")
     YOUTUBE_API_SERVICE_NAME = "youtube"
     YOUTUBE_API_VERSION = "v3"
 

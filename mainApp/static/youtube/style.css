@@ -44,6 +44,7 @@
     text-align: left;
     color:black;
     border-radius: 10px;
+    padding-bottom: 30px;
 }
 
 .addChannel:hover .addChannelDetails {
@@ -69,12 +70,13 @@
     width:10%;
 }
 
-input [type=submit]{
+button {
     display:block;
+    font-size: 1.2em;
     width:20%;
     min-width:150px;
     border-radius: 5px;
-    margin:10px 0;
+    margin:auto;
     background-color: green;
     color:white;
 }
