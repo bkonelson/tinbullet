@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'youtube/style.css' %}"> 
+<title>Eat Butter</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="containerheader"><a class="containerLink" href="{{cur_site.site_url}}" target="_blank">
+        <div class="siteIcon">
+            <img class="site_icon" src="{% static 'youtube/' %}{{cur_site.icon}}">
+        </div>
+        <div class="siteName">{{cur_site.site_name}}</div>
+    </a></div>
+    <div class="containerbody">
+    {% if title %}
+        <img class="channelThumb" src="{{thumburl}}">
+        <p class="channelName">{{title}}</p>
+        <p class="channelDesc">{{description}}</p>
+    {% else %}
+        <p>No channels found, please search again.</p>
+        <div class="addChannel">
+                <p>&#8853 Add Channel</p>
+                <form action="{% url 'mainApp:pickchannels' %}" method="POST"><div class="addChannelDetails">
+                    {% csrf_token %}
+                    <div class="channelSearch">
+                        <label for="chaninput">Channel Name:</label>
+                        <input class="chaninput" type="text" name="input">
+                    </div>
+                    <button type="submit">Search</button>
+                </div></form>
+            </div>
+    {% endif %}
+    </div>
+    
+    <div class="containerfooter">
+        
+    </div>
+</div>
+</body>

@@ -3,7 +3,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'youtube/style.css' %}"> 
-<title>Eat Butter</title>
+<title>TinBullet</title>
 </head>
 
 <body>
@@ -32,19 +32,13 @@
                     <label for="chaninput">Channel Name:</label>
                     <input class="chaninput" type="text" name="input">
                 </div>
-                <div class="dataQty">
-                    <label for="dataQty">Number of videos:</label>
-                    <input class="qtyinputs" type="radio" name="chqty" value="1">1
-                    <input class="qtyinputs" type="radio" name="chqty" value="3">3
-                    <input class="qtyinputs" type="radio" name="chqty" value="5">5
-                </div>
                 <button type="submit">Search</button>
             </div></form>
         </div>
     </div>
     
     <div class="containerfooter">
-        <p>{{channel0}}</p>
+        
     </div>
 </div>
 </body>

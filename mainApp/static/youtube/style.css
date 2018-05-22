@@ -80,3 +80,21 @@ button {
     background-color: green;
     color:white;
 }
+
+.channelThumb {
+    width: 30%;
+    display: inline-block;
+
+}
+
+.channelName {
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 2em;
+    display: inline-block;
+
+}
+
+.channelDesc {
+    font-family: Impact, Charcoal, sans-serif;
+
+}
