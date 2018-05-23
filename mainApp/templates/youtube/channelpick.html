@@ -3,7 +3,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'youtube/style.css' %}"> 
-<title>Eat Butter</title>
+<title>TinBullet</title>
 </head>
 
 <body>
@@ -15,10 +15,13 @@
         <div class="siteName">{{cur_site.site_name}}</div>
     </a></div>
     <div class="containerbody">
-    {% if title %}
-        <img class="channelThumb" src="{{thumburl}}">
-        <p class="channelName">{{title}}</p>
-        <p class="channelDesc">{{description}}</p>
+    {% if channels %}
+        {% for channel in channels %}
+            <img class="channelThumb" src="{{channel.channel_thumb}}">
+            <p class="channelName">{{channel.channel_name}}</p>
+            <p class="channelDesc">{{channel.channel_desc}}</p>
+            <a href="{{channel.channel_url}}" target="_blank">{{channel.channel_url}}</a>
+        {% endfor %}
     {% else %}
         <p>No channels found, please search again.</p>
         <div class="addChannel">
