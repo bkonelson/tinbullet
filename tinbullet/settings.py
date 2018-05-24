@@ -124,4 +124,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#STATIC_ROOT = os.path.join(os.path.expanduser('~'),'tinbullet/mainApp/test')
+
 LOGIN_REDIRECT_URL = '/mainApp/'

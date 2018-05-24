@@ -1,8 +1,19 @@
+body {
+    background-color:#f0f0f5;
+}
+.user, .logout {
+    width:100%;
+    font-style: italic;
+    text-align: right;
+    margin:0;
+}
+
 .container {
+    background-color: white;
     margin:auto;
     width:80%;
     min-height:400px;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 5px;
     text-align: center;
     
@@ -13,7 +24,7 @@
 }
 
 .containerheader {
-    border-bottom:1px solid black;
+    border-bottom:2px solid black;
     font-family: Impact, Charcoal, sans-serif;
     font-size: 2.5em;
     padding: 10px 20px 10px 20px;
@@ -64,36 +75,71 @@
     width:100%;
 
 }
-
-.qtyinputs {
-    width:10%;
+.deletebox {
+    display: inline-block;
+    background-color: red;
+    border-radius: 10px;
+}
+.deletebox:hover {
+    box-shadow: 2px 2px 1px grey;
 }
 
-button {
+.normalbutton {
     display:block;
     font-size: 1.2em;
-    width:20%;
+    max-width:60%;
     min-width:150px;
     border-radius: 5px;
     margin:auto;
     background-color: green;
     color:white;
+    margin-bottom:10px;
 }
 
-.channelThumb {
-    width: 30%;
-    display: inline-block;
+.chantitle, .chdelform {
+    display:inline-block;
+}
 
+.chantitle {
+    font-size:1.3em;
+    border-top:1px solid red;
+    border-bottom:1px solid red;
+}
+
+.titlethumb {
+    width:100%;
+    border-top: 1px solid black;
+    padding:2%;
+    box-sizing: border-box;
+}
+.thumb {
+    width: 30%;
+    max-width:200px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .channelName {
     font-family: Impact, Charcoal, sans-serif;
     font-size: 2em;
     display: inline-block;
-
+    
 }
 
 .channelDesc {
     font-family: Impact, Charcoal, sans-serif;
+    
+}
 
+.vidlinkthumb {
+    width:100%;
+    padding:2%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.vidlink {
+    font-size: 1.1em;
+    display: inline-block;
+    max-width:65%;
 }

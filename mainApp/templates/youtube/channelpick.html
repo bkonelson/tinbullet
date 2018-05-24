@@ -17,10 +17,16 @@
     <div class="containerbody">
     {% if channels %}
         {% for channel in channels %}
-            <img class="channelThumb" src="{{channel.channel_thumb}}">
-            <p class="channelName">{{channel.channel_name}}</p>
+            <div class="titlethumb">
+                <img class="thumb" src="{{channel.channel_thumb}}">
+                <span class="channelName">{{channel.channel_name}}</span>
+            </div>
             <p class="channelDesc">{{channel.channel_desc}}</p>
-            <a href="{{channel.channel_url}}" target="_blank">{{channel.channel_url}}</a>
+            <form action="{% url 'mainApp:index' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="add" value="{{channel.channel_name}}">
+                <button class="normalbutton" type="submit">Add this channel</button>
+            </form>
         {% endfor %}
     {% else %}
         <p>No channels found, please search again.</p>
@@ -32,7 +38,7 @@
                         <label for="chaninput">Channel Name:</label>
                         <input class="chaninput" type="text" name="input">
                     </div>
-                    <button type="submit">Search</button>
+                    <button class="normalbutton" type="submit">Search</button>
                 </div></form>
             </div>
     {% endif %}
