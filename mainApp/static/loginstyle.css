@@ -1,0 +1,35 @@
+input[type=submit] {   
+    display:block;
+    font-size: 1.2em;
+    max-width:60%;
+    min-width:150px;
+    border-radius: 5px;
+    background-color: green;
+    color:white;
+    margin-bottom:10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+}
+
+body {
+    margin:0;
+    font-size: 1.1em;
+    background: linear-gradient(to right, rgba(0,150,150,.2), rgba(0,150,150,1));
+}
+
+#smallcontainer {
+    padding:10px;
+    background-color: white;
+    margin:auto;
+    width:50%;
+    max-width: 400px;
+    border:1px solid black;
+
+}
+
+input[type=text],input[type=password] {
+    width:90%;
+}

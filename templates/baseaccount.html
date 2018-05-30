@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<head>
+    <title>{% block title %}Welcome to Tinbullet!{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'loginstyle.css' %}">
+</head>
+<body>
+    <h1>TinBullet</h1>
+    <div id="smallcontainer">
+            {% block content %}{% endblock %}
+    </div>
+</body>
