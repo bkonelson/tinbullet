@@ -1,10 +1,12 @@
 import requests
 import os
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Site, Channel, UserChannel
 from apiclient.discovery import build
+from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from .forms import SignUpForm
 
 DEVELOPER_KEY = os.getenv("YOUTUBE_API")
 YOUTUBE_API_SERVICE_NAME = "youtube"
@@ -15,6 +17,20 @@ class video():
     video_url=''
     video_thumb=''
     video_channel=''
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('/mainApp/')
+    else:
+        form = SignUpForm()
+    return render(request, 'createuser.html', {'form': form})
 
 @login_required
 def index(request):
@@ -27,7 +43,10 @@ def index(request):
         ch = Channel.objects.get(channel_name=addchanname)
         UserChannel.objects.get(user=request.user).channels.add(ch)
     cur_site = Site.objects.get(site_name="YouTube")
-    cur_channels = UserChannel.objects.get(user=request.user).channels.all()
+    try:
+        cur_channels = UserChannel.objects.get(user=request.user).channels.all()
+    except:
+        cur_channels = UserChannel(user=request.user).save()
     video_list = []
     if cur_channels:
         for chan in cur_channels:

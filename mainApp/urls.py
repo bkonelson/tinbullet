@@ -5,4 +5,5 @@ app_name = 'mainApp'
 urlpatterns = [
     path('', views.index, name = 'index',),
     path('pickchannels/', views.pick_channels, name='pickchannels'),
+    path('signup/', views.signup, name='signup'),
 ]
