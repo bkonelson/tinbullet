@@ -1,10 +1,10 @@
 {% extends "baseaccount.html" %}
 
 {% block content %}
-  <h2>Sign up</h2>
+  <h2>Please enter information:</h2>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Sign up</button>
+    <input type="submit" value="Sign Up">
   </form>
 {% endblock %}

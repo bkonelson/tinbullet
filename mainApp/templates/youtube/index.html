@@ -22,7 +22,7 @@
     {% if video_list %} 
         {% for video in video_list %}
             {% if forloop.counter|add:"-1"|divisibleby:"3" %}
-                <div >
+                <div>
                     <p class="chantitle">{{video.channel}}</p>
                     <form class="chdelform" action="{% url 'mainApp:index' %}" method="POST">
                         {% csrf_token %}
@@ -33,7 +33,7 @@
             {% endif %}
             <div class="vidlinkthumb">
                 <img class='thumb' src="{{video.video_thumb}}">
-                <span class='vidlink'><a href="{{video.video_url}}" target="_blank">{{video.video_title}}</a></span>
+                <span><a class='vidlink' href="{{video.video_url}}" target="_blank">{{video.video_title}}</a></span>
             </div>
         {% endfor %}
     {% else %}
