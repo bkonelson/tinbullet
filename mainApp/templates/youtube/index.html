@@ -9,7 +9,7 @@
 <body>
 {%if user.is_authenticated %}
     <p class="user">Welcome: {{user}}</p>
-    <div align="right"><a class="logout" href="/accounts/logout">Logout</a></div>
+    <div align="right"><a class="logout" href="/tinbullet/accounts/logout">Logout</a></div>
 {%endif%}
 <div class="container">
     <div class="containerheader"><a class="containerLink" href="{{cur_site.site_url}}" target="_blank">
